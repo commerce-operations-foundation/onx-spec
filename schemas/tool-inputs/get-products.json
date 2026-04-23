@@ -11,6 +11,13 @@
         "type": "string"
       }
     },
+    "externalIds": {
+      "description": "External product ID from source system, could be a comma separated list",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "skus": {
       "description": "Product SKU (Stock Keeping Unit)",
       "type": "array",

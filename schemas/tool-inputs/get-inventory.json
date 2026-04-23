@@ -11,6 +11,13 @@
         "type": "string"
       }
     },
+    "externalIds": {
+      "description": "External inventory ID from source system, could be a comma separated list",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "locationIds": {
       "description": "Specific warehouse/location ID (optional - if not provided, returns aggregated inventory)",
       "type": "array",
