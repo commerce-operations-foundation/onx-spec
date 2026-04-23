@@ -17,6 +17,10 @@
       "items": {
         "type": "string"
       }
+    },
+    "tenantIds": {
+      "description": "Filter by tenant IDs",
+      "type": "string"
     }
   },
   "required": [
