@@ -17,6 +17,11 @@
       "items": {
         "type": "string"
       }
+    },
+    "sort": {
+      "description": "Field to sort by.",
+      "type": "string",
+      "enum": [ "createdAtAsc", "createdAtDesc", "updatedAtAsc", "updatedAtDesc" ]
     }
   },
   "required": [
