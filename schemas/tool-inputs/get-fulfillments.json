@@ -25,6 +25,16 @@
         "type": "string"
       }
     },
+    "includeLineItems": {
+      "description": "Whether to include detailed line item information in the returned fulfillments",
+      "default": true,
+      "type": "boolean"
+    },
+    "includeCartonItems": {
+      "description": "Whether to include detailed carton packing information in the returned fulfillments",
+      "default": true,
+      "type": "boolean"
+    },
     "orderIds": {
       "description": "Order ID associated with the shipment",
       "type": "array",

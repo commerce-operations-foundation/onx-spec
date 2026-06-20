@@ -36,6 +36,138 @@
       "description": "Unique identifier for the tenant that owns this entity (read-only)",
       "type": "string"
     },
+    "cartonItems": {
+      "description": "List of carton items associated with this fulfillment",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique system-generated identifier for this carton",
+            "type": "string"
+          },
+          "customFields": {
+            "description": "Custom Fields - allows for arbitrary key-value pairs to be added to an entity. Useful for storing any custom data that is not covered by the other fields.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "dimsUom": {
+            "description": "Units of measure for the carton dimensions. accepts: IN (inches), CM (centimeters)",
+            "type": "string"
+          },
+          "externalId": {
+            "description": "External identifier for this carton",
+            "type": "string"
+          },
+          "height": {
+            "description": "Height of the carton",
+            "type": "number"
+          },
+          "length": {
+            "description": "Length of the carton",
+            "type": "number"
+          },
+          "lineItems": {
+            "description": "Items included in this fulfillment",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Unique identifier for this line item within the order",
+                  "type": "string"
+                },
+                "sku": {
+                  "description": "Product Variant SKU",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "quantity": {
+                  "description": "Quantity packed inside the carton",
+                  "type": "number",
+                  "minimum": 1
+                },
+                "unitPrice": {
+                  "description": "Price per unit",
+                  "type": "number",
+                  "minimum": 0
+                },
+                "unitDiscount": {
+                  "description": "Discount per unit",
+                  "type": "number",
+                  "minimum": 0
+                },
+                "totalPrice": {
+                  "description": "Total price for the line item. Calculated as (unitPrice - unitDiscount) * quantity",
+                  "type": "number",
+                  "minimum": 0
+                },
+                "name": {
+                  "description": "Product name for display",
+                  "type": "string"
+                },
+                "customFields": {
+                  "description": "Custom Fields - allows for arbitrary key-value pairs to be added to an entity. Useful for storing any custom data that is not covered by the other fields.",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "sku",
+                "quantity"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "trackingNumber": {
+            "description": "Tracking number for the carton",
+            "type": "string"
+          },
+          "weightUOM": {
+            "description": "Units of measure for the carton weight. accepts: LB (pounds), KG (kilograms)",
+            "type": "string"
+          },
+          "weight": {
+            "description": "Weight of the carton",
+            "type": "number"
+          },
+          "width": {
+            "description": "Width of the carton",
+            "type": "number"
+          }
+        }
+      }
+    },
     "customFields": {
       "description": "Custom Fields - allows for arbitrary key-value pairs to be added to an entity. Useful for storing any custom data that is not covered by the other fields.",
       "type": "array",
