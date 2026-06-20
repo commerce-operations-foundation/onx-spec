@@ -4,6 +4,14 @@
   "description": "Input schema for fulfilling an order",
   "type": "object",
   "properties": {
+    "billOfLading": {
+      "description": "The bill of lading number assigned to this fulfillment.",
+      "type": "string"
+    },
+    "consolidatedBillOfLading": {
+      "description": "the consolidated bill of lading number that this fulfillment has been consolidated under.",
+      "type": "string"
+    },
     "customFields": {
       "description": "Custom Fields - allows for arbitrary key-value pairs to be added to an entity. Useful for storing any custom data that is not covered by the other fields.",
       "type": "array",

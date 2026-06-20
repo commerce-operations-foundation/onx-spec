@@ -8,6 +8,14 @@
       "description": "Unique system-generated identifier for this entity (read-only)",
       "type": "string"
     },
+    "billOfLading": {
+      "description": "The bill of lading number assigned to this fulfillment.",
+      "type": "string"
+    },
+    "consolidatedBillOfLading": {
+      "description": "the consolidated bill of lading number that this fulfillment has been consolidated under.",
+      "type": "string"
+    },
     "externalId": {
       "description": "ID of the entity in the client's system. Must be unique within the tenant.",
       "type": "string"
