@@ -8,7 +8,7 @@
       "description": "The bill of lading number assigned to this fulfillment.",
       "type": "string"
     },
-    "cartonItems": {
+    "containerItems": {
       "description": "List of carton items associated with this fulfillment",
       "type": "array",
       "items": {
