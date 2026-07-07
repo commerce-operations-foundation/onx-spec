@@ -36,7 +36,7 @@
       "description": "Unique identifier for the tenant that owns this entity (read-only)",
       "type": "string"
     },
-    "cartonItems": {
+    "containerItems": {
       "description": "List of carton items associated with this fulfillment",
       "type": "array",
       "items": {
