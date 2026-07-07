@@ -11,6 +11,30 @@
         "type": "string"
       }
     },
+    "billOfLadings": {
+      "description": "The bill of lading number assigned to this fulfillment.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "consolidatedBillOfLadings": {
+      "description": "the consolidated bill of lading number that this fulfillment has been consolidated under.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "includeLineItems": {
+      "description": "Whether to include detailed line item information in the returned fulfillments",
+      "default": true,
+      "type": "boolean"
+    },
+    "includeCartonItems": {
+      "description": "Whether to include detailed carton packing information in the returned fulfillments",
+      "default": true,
+      "type": "boolean"
+    },
     "orderIds": {
       "description": "Order ID associated with the shipment",
       "type": "array",
