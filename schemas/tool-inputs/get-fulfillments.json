@@ -11,6 +11,13 @@
         "type": "string"
       }
     },
+    "externalIds": {
+      "description": "External fulfillment ID from source system, could be a comma separated list",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "orderIds": {
       "description": "Order ID associated with the shipment",
       "type": "array",

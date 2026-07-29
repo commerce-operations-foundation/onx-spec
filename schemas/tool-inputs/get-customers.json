@@ -54,6 +54,13 @@
         "type": "string"
       }
     },
+    "externalIds": {
+      "description": "External customer ID from source system, could be a comma separated list",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "emails": {
       "description": "Customer email address",
       "type": "array",
