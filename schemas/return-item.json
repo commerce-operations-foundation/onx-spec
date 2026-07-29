@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ReturnItem",
+  "description": "Return Line Item represents a specific product variant that is being returned, along with its quantity, reason, and inspection details. It is associated with a Return and captures the details of what was returned.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique system-generated identifier for this entity (read-only)",
+      "type": "string"
+    },
+    "returnId": {
+      "description": "Unique identifier of the return this line item belongs to",
+      "type": "string"
+    },
+    "externalId": {
+      "description": "ID of the entity in the client's system. Must be unique within the tenant.",
+      "type": "string"
+    },
+    "tenantId": {
+      "description": "Unique identifier for the tenant that owns this entity (read-only)",
+      "type": "string"
+    },
+    "createdAt": {
+      "description": "ISO 8601 timestamp when the entity was created (read-only)",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+    },
+    "updatedAt": {
+      "description": "ISO 8601 timestamp when the entity was last updated (read-only)",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+    },
+    "orderLineItemId": {
+      "description": "Reference to the original order line item being returned",
+      "type": "string"
+    },
+    "sku": {
+      "description": "Product Variant SKU",
+      "type": "string",
+      "minLength": 1
+    },
+    "quantityReturned": {
+      "description": "Quantity being returned",
+      "type": "number",
+      "minimum": 1
+    },
+    "returnReason": {
+      "description": "Primary return reason code (e.g., \"defective\", \"wrong_item\", \"no_longer_needed\", \"size_issue\", \"quality_issue\")",
+      "type": "string"
+    },
+    "inspection": {
+      "type": "object",
+      "properties": {
+        "conditionCategory": {
+          "description": "Item condition grade after inspection",
+          "type": "string"
+        },
+        "dispositionOutcome": {
+          "description": "Disposition decision for the returned item",
+          "type": "string"
+        },
+        "warehouseLocationId": {
+          "description": "Warehouse bin/shelf location identifier for restocking",
+          "type": "string"
+        },
+        "note": {
+          "description": "Inspection notes about item condition and disposition",
+          "type": "string"
+        },
+        "inspectedBy": {
+          "description": "Who inspected the item",
+          "type": "string"
+        },
+        "inspectedAt": {
+          "description": "When item was inspected",
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+        },
+        "images": {
+          "description": "Photos of returned item condition",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "unitPrice": {
+      "description": "Original unit price from order",
+      "type": "number"
+    },
+    "refundAmount": {
+      "description": "Refund amount for this line item",
+      "type": "number",
+      "minimum": 0
+    },
+    "restockFee": {
+      "description": "Restocking fee charged for this line item",
+      "type": "number",
+      "minimum": 0
+    },
+    "name": {
+      "description": "Product name for display",
+      "type": "string"
+    },
+    "customFields": {
+      "description": "Custom Fields - allows for arbitrary key-value pairs to be added to an entity. Useful for storing any custom data that is not covered by the other fields.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "orderLineItemId",
+    "sku",
+    "quantityReturned",
+    "returnReason"
+  ],
+  "additionalProperties": false
+}
