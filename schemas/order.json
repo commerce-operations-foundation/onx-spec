@@ -294,6 +294,18 @@
             "description": "Unique identifier for this line item within the order",
             "type": "string"
           },
+          "orderId": {
+            "description": "Unique identifier of the order this line item belongs to",
+            "type": "string"
+          },
+          "externalId": {
+            "description": "ID of the entity in the client's system. Must be unique within the tenant.",
+            "type": "string"
+          },
+          "tenantId": {
+            "description": "Unique identifier for the tenant that owns this entity (read-only)",
+            "type": "string"
+          },
           "sku": {
             "description": "Product Variant SKU",
             "type": "string",
