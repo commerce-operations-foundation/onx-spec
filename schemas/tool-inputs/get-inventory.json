@@ -25,6 +25,10 @@
         "type": "string"
       }
     },
+    "tenantIds": {
+      "description": "Filter by tenant IDs",
+      "type": "string"
+    },
     "sort": {
       "description": "Field to sort by.",
       "type": "string",
