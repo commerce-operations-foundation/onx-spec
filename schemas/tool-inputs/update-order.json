@@ -66,6 +66,10 @@
               "description": "Last name of the person at this address",
               "type": "string"
             },
+            "locationIdentifier": {
+              "description": "ID associated with this address. (e.g., a store number)",
+              "type": "string"
+            },
             "phone": {
               "description": "Phone number including country code if applicable (e.g., \"+1-555-123-4567\")",
               "type": "string"
@@ -178,6 +182,10 @@
                       },
                       "lastName": {
                         "description": "Last name of the person at this address",
+                        "type": "string"
+                      },
+                      "locationIdentifier": {
+                        "description": "ID associated with this address. (e.g., a store number)",
                         "type": "string"
                       },
                       "phone": {
@@ -344,6 +352,63 @@
             "additionalProperties": false
           }
         },
+        "markforAddress": {
+          "description": "Markfor address",
+          "type": "object",
+          "properties": {
+            "address1": {
+              "description": "Primary street address (e.g., \"123 Main Street\")",
+              "type": "string"
+            },
+            "address2": {
+              "description": "Secondary address information such as apartment, suite, or unit number (e.g., \"Apt 4B\")",
+              "type": "string"
+            },
+            "city": {
+              "description": "City or town name",
+              "type": "string"
+            },
+            "company": {
+              "description": "Company or organization name associated with this address",
+              "type": "string"
+            },
+            "country": {
+              "description": "Country code in ISO 3166-1 alpha-2 format (2 letters, e.g., \"US\", \"CA\", \"GB\")",
+              "type": "string"
+            },
+            "email": {
+              "description": "Email address for contact at this location",
+              "type": "string",
+              "format": "email",
+              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+            },
+            "firstName": {
+              "description": "First name of the person at this address",
+              "type": "string"
+            },
+            "lastName": {
+              "description": "Last name of the person at this address",
+              "type": "string"
+            },
+            "locationIdentifier": {
+              "description": "ID associated with this address. (e.g., a store number)",
+              "type": "string"
+            },
+            "phone": {
+              "description": "Phone number including country code if applicable (e.g., \"+1-555-123-4567\")",
+              "type": "string"
+            },
+            "stateOrProvince": {
+              "description": "State or province. For US addresses, use 2-letter state code (e.g., \"CA\", \"NY\"). For other countries, use full province name or local standard.",
+              "type": "string"
+            },
+            "zipCodeOrPostalCode": {
+              "description": "ZIP code (US) or postal code (international) for the address",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
         "orderDiscount": {
           "description": "Order Discount",
           "type": "number"
@@ -433,6 +498,10 @@
             },
             "lastName": {
               "description": "Last name of the person at this address",
+              "type": "string"
+            },
+            "locationIdentifier": {
+              "description": "ID associated with this address. (e.g., a store number)",
               "type": "string"
             },
             "phone": {

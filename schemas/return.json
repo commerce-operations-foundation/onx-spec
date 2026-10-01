@@ -235,6 +235,10 @@
               "description": "Last name of the person at this address",
               "type": "string"
             },
+            "locationIdentifier": {
+              "description": "ID associated with this address. (e.g., a store number)",
+              "type": "string"
+            },
             "phone": {
               "description": "Phone number including country code if applicable (e.g., \"+1-555-123-4567\")",
               "type": "string"
@@ -299,6 +303,10 @@
         },
         "lastName": {
           "description": "Last name of the person at this address",
+          "type": "string"
+        },
+        "locationIdentifier": {
+          "description": "ID associated with this address. (e.g., a store number)",
           "type": "string"
         },
         "phone": {
