@@ -1,41 +1,36 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "get-orders",
-  "description": "Input schema for querying orders",
+  "title": "get-order-items",
+  "description": "Input schema for querying order items",
   "type": "object",
   "properties": {
     "ids": {
-      "description": "Internal order ID, could be a comma separated list",
+      "description": "Internal order item ID, could be a comma separated list",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
     "externalIds": {
-      "description": "External order ID from source system, could be a comma separated list",
+      "description": "External order item ID from source system, could be a comma separated list",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "statuses": {
-      "description": "Order status",
+    "orderIds": {
+      "description": "Filter by parent order ID, could be a comma separated list",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "names": {
-      "description": "Friendly Order identifier",
+    "skus": {
+      "description": "Product Variant SKU, could be a comma separated list",
       "type": "array",
       "items": {
         "type": "string"
       }
-    },
-    "includeLineItems": {
-      "description": "Whether to include detailed line item information in the returned orders",
-      "default": true,
-      "type": "boolean"
     },
     "updatedAtMin": {
       "description": "Minimum updated at date (inclusive)",
