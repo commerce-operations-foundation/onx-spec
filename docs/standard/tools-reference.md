@@ -1,6 +1,6 @@
 # Tools Reference
 
-The reference MCP server currently exposes ten fulfillment tools grouped into action and query categories. All tools conform to the `ToolDescription` contract defined in the server source (`server/src/tools`).
+The standard defines fourteen fulfillment tools grouped into action and query categories. The reference MCP server currently exposes twelve of them; `get-order-items` and `get-return-items` are defined in this spec but not yet implemented there. All tools conform to the `ToolDescription` contract defined in the server source (`server/src/tools`).
 
 ## Action Tools
 
@@ -90,6 +90,20 @@ Retrieves return records with filtering by return attributes and date ranges.
 
 **Result**: `FulfillmentToolResult<{ returns: Return[] }>`.
 
+### get-order-items
+Returns order line items directly, with filtering by parent order, SKU, and date ranges. Not yet implemented in the reference MCP server.
+
+**Input**: `GetOrderItemsInput`
+
+**Result**: `FulfillmentToolResult<{ orderItems: OrderItem[] }>`.
+
+### get-return-items
+Returns return line items directly, with filtering by parent return, SKU, and date ranges. Not yet implemented in the reference MCP server.
+
+**Input**: `GetReturnItemsInput`
+
+**Result**: `FulfillmentToolResult<{ returnItems: ReturnItem[] }>`.
+
 ---
 
-All request/response schemas are generated from the TypeScript definitions in `server/src/schemas` and validated at runtime through JSON Schema. Consult those source files for the authoritative schema definitions.
+All request/response schemas are generated from the TypeScript definitions in `server/src/schemas` and validated at runtime through JSON Schema. Consult those source files for the authoritative schema definitions. JSON Schema copies of every tool input live in [`schemas/tool-inputs/`](../../schemas/tool-inputs/).
